@@ -52,7 +52,9 @@ class ImageCreationForm(ContentCreationForm):
                 filename = os.path.basename(filepath)
             else:
                 return
-            self.cleaned_data['title'] = filename
+            #-- We don't need extension in filename
+            name, dot, extension = filename.rpartition('.')
+            self.cleaned_data['title'] = name
         
         if not self.cleaned_data['slug']:
             slug = slugify(self.cleaned_data['title'])
