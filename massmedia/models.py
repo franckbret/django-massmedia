@@ -246,6 +246,9 @@ class Media(models.Model):
             except:
                 pass
         self.metadata = Metadata(data)
+    
+    def get_metadata(self):
+        return self.metadata.items()
 
 class Image(Media):
     """

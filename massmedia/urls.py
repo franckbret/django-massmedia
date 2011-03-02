@@ -4,7 +4,6 @@ from django.http import HttpResponseNotFound
 from models import GrabVideo, Collection, Image, Video, Audio, Flash, Document, Embed
 from views import mediatype_detail
 
-
 media_dict = {
     'collection': {'queryset':Collection.objects.public(),'meta':Collection._meta},
     'image': {'queryset':Image.objects.public(),'meta':Image._meta},
